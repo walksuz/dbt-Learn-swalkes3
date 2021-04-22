@@ -33,3 +33,12 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+  - name: orders
+    description: This model includes payments and orders
+    columns:
+      - name: customer_id        
+        tests:
+           - relationships:
+              to: ref('customers')
+              field: customer_id    
